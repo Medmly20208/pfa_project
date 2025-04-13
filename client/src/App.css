@@ -1,6 +1,11 @@
 body {
   background-image: url("./assets/background.jpg");
-  background-size: cover;
+}
+
+@media screen and (min-width: 1015px) {
+  body {
+    background-size: cover;
+  }
 }
 
 form {
