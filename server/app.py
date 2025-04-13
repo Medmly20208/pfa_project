@@ -15,7 +15,7 @@ app = FastAPI()
 # Allow CORS from your frontend (localhost:5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","localhost:5173"],  # or use ["*"] to allow all origins (not recommended for production)
+    allow_origins=["http://localhost:5173","localhost:5173","https://pfaproject.netlify.app/","pfaproject.netlify.app/"],  # or use ["*"] to allow all origins (not recommended for production)
     allow_credentials=True,
     allow_methods=["*"],  # allows all methods (GET, POST, etc.)
     allow_headers=["*"],  # allows all headers
