@@ -11,7 +11,7 @@ function App() {
     type: "", // We use a string for the selected transaction type
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+
   const [result, setResult] = useState(null);
 
   // Handle change for form inputs
@@ -29,7 +29,6 @@ function App() {
 
     // Set loading state to true before making the API call
     setLoading(true);
-    setError(null); // Reset previous errors
 
     try {
       // Prepare the data to send
@@ -49,13 +48,16 @@ function App() {
       };
 
       // Make the POST request
-      const response = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload), // Send form data as JSON
-      });
+      const response = await fetch(
+        "https://pfa-project-5zho.onrender.com/predict",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload), // Send form data as JSON
+        }
+      );
 
       // Check if the response is okay (status 200-299)
       if (response.ok) {
